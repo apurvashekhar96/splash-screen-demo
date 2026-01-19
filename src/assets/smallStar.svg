@@ -1,0 +1,24 @@
+<svg
+  viewBox="0 0 100 100"
+  xmlns="http://www.w3.org/2000/svg"
+  style="width: 100%; height: 100%; display: block"
+>
+  <!-- Black background -->
+  <rect width="100" height="100" fill="black" />
+
+  <!-- White star shape with circular cutouts from all four corners -->
+  <defs>
+    <mask id="star-mask">
+      <!-- White square (visible area) -->
+      <rect width="100" height="100" fill="white" />
+      <!-- Black circles at each corner (cut out areas) -->
+      <circle cx="0" cy="0" r="50" fill="black" />
+      <circle cx="100" cy="0" r="50" fill="black" />
+      <circle cx="0" cy="100" r="50" fill="black" />
+      <circle cx="100" cy="100" r="50" fill="black" />
+    </mask>
+  </defs>
+
+  <!-- White rectangle with mask applied to create star shape -->
+  <rect width="100" height="100" fill="white" mask="url(#star-mask)" />
+</svg>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>growthx-splash-screen</title>
+    <link rel="stylesheet" href="src/splash-screen.css" />
+  </head>
+  <body>
+    <!-- Splash Screen -->
+    <div id="splash">
+      <div class="splash-content">
+        <div class="small-star">
+          <img src="./src/assets/smallStar.svg" alt="" role="presentation" />
+        </div>
+
+        <div class="big-star-container">
+          <div class="big-star-container-bg"></div>
+          <div class="big-star-svg">
+            <img src="./src/assets/bigStar.svg" alt="" role="presentation" />
+          </div>
+        </div>
+        <p class="splash-text">ELEVATE</p>
+      </div>
+    </div>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      setTimeout(() => {
+        const splashComplete = new CustomEvent("animationComplete");
+        const targetEl = document.querySelector("#splash");
+
+        window.hasSplashScreenCompleted = false;
+        targetEl.dispatchEvent(splashComplete);
+      }, 3000);
+    </script>
+  </body>
+</html>
